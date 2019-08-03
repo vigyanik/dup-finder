@@ -57,6 +57,7 @@ def check_for_duplicates(paths, hash=hashlib.sha1):
                     hashes_by_size[file_size] = []  # create the list for this file size
                     hashes_by_size[file_size].append(full_path)
             print("Loaded ", len(path_set[path_set_index]), "files in set", path_set_index)
+            if len(path_set[path_set_index]) > 100* 1000: break
         path_set_index += 1
     # For all files with the same file size, get their hash on the 1st 1024 bytes
     for __, files in hashes_by_size.items():

@@ -47,7 +47,7 @@ def check_for_duplicates(paths, hash=hashlib.sha1):
                 except (OSError,):
                     # not accessible (permissions, etc) - pass on
                     continue
-                print("adding", full_path, "to index", path_set_index)
+                #print("adding", full_path, "to index", path_set_index)
                 path_set[path_set_index].add(full_path)
                 duplicate = hashes_by_size.get(file_size)
 
